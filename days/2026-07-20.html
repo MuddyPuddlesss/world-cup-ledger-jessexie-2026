@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-20 模拟方案</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    .break-anywhere {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .anchor-target {
+      scroll-margin-top: 6.5rem;
+    }
+    .day-anchor {
+      transition: background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
+    }
+    .day-anchor.is-active {
+      border-color: #1c2723 !important;
+      background: #1c2723 !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 18px rgba(28,39,35,.16);
+    }
+    .no-scrollbar {
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    select { color-scheme: light; }
+    .date-chip {
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.075);
+      color: #e7e5e4;
+      white-space: nowrap;
+      transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+    }
+    .date-chip:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.24);
+    }
+    .date-chip span {
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .date-chip .status-mark {
+      color: #a8a29e;
+    }
+    .date-chip.status-profit .status-mark {
+      color: #fca5a5;
+    }
+    .date-chip.status-loss .status-mark {
+      color: #86efac;
+    }
+    .date-chip.status-pending .status-mark {
+      color: #93c5fd;
+    }
+    .date-chip.is-active {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.52), 0 8px 18px rgba(0,0,0,.12);
+    }
+    .date-chip.is-active[data-date-choice="all"] {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-profit {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-loss {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-pending {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+  </style>
+</head>
+<body class="bg-[#eef2f6] text-stone-950">
+  <div class="mx-auto min-h-screen w-full max-w-5xl px-2 py-2 sm:px-5 sm:py-6">
+    
+    <article id="overview" class="anchor-target min-w-0 rounded-2xl border border-stone-200 bg-stone-50/70 p-4 shadow-sm sm:p-5">
+      <header class="flex min-w-0 flex-col gap-3 border-b border-stone-200 pb-4 sm:flex-row sm:items-start sm:justify-between">
+        <div class="min-w-0">
+          <a class="mb-4 inline-flex text-sm font-semibold text-stone-500" href="../index.html">← 返回首页</a>
+          <div></div>
+          <span class="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold border-stone-200 bg-stone-50 text-stone-700"><span class="text-sm leading-none">−</span><span>无比赛</span></span>
+          <h2 class="mt-3 break-anywhere text-2xl font-semibold tracking-tight text-stone-950">2026-07-20</h2>
+          <p class="mt-1 break-anywhere text-sm text-stone-500">2026-07-20 世界杯收官后无未开赛场次</p>
+        </div>
+        <div class="flex shrink-0 gap-2"><a class="rounded-lg bg-stone-900 px-3 py-2 text-sm font-semibold text-white" href="../recaps/2026-07-19.html">昨日复盘</a></div>
+      </header>
+
+      <section class="mt-4 grid min-w-0 grid-cols-3 gap-2">
+        <div class="min-w-0 rounded-xl bg-stone-50 px-2.5 py-2"><div class="text-[11px] font-medium text-stone-500">投入</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950">0.00 元</div></div>
+        <div class="min-w-0 rounded-xl bg-stone-50 px-2.5 py-2"><div class="text-[11px] font-medium text-stone-500">最高估算</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950">0.00 元</div></div>
+        <div class="min-w-0 rounded-xl bg-stone-50 px-2.5 py-2"><div class="text-[11px] font-medium text-stone-500">实际回报</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950">0.00 元</div></div>
+      </section>
+
+      <nav class="sticky top-0 z-40 -mx-4 mt-4 border-y border-stone-200 bg-[#f7f6f2]/95 px-4 py-2 backdrop-blur sm:-mx-5 sm:px-5"><div class="no-scrollbar flex max-w-full gap-2 overflow-x-auto overscroll-x-contain" data-day-anchor-bar><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm text-stone-700 bg-white border-stone-200 is-active" href="#overview" data-day-anchor="overview" aria-current="true">概览</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm text-stone-700 bg-white border-stone-200" href="#modules" data-day-anchor="modules" aria-current="false">模块重点</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm bg-rose-100 text-rose-700 border-transparent" href="#module-result" data-day-anchor="module-result" aria-current="false">胜平负/让球</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm bg-violet-100 text-violet-700 border-transparent" href="#module-score" data-day-anchor="module-score" aria-current="false">比分</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm bg-amber-100 text-amber-800 border-transparent" href="#module-half" data-day-anchor="module-half" aria-current="false">半全场</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm bg-sky-100 text-sky-700 border-transparent" href="#module-goals" data-day-anchor="module-goals" aria-current="false">总进球数</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm bg-teal-100 text-teal-700 border-transparent" href="#module-mixed" data-day-anchor="module-mixed" aria-current="false">混合过关</a><a class="day-anchor inline-flex h-9 shrink-0 items-center justify-center rounded-full border px-3 text-xs font-semibold shadow-sm text-stone-700 bg-white border-stone-200" href="#matches" data-day-anchor="matches" aria-current="false">涉及场次</a></div></nav>
+
+      <section class="mt-4 rounded-xl border border-blue-100 bg-blue-50/80 px-3 py-2 text-xs leading-5 text-blue-900"><span class="font-semibold">评判口径：</span>体彩SP不参与赛果判断、概率分配、比分候选或入票优先级；本次仅用于确认当前世界杯可售列表为空。</section>
+
+      
+      
+      <section id="modules" class="anchor-target mt-5 min-w-0">
+        <div class="mb-2 flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-stone-950">模块重点</h3>
+          <span class="text-xs text-stone-500">先看玩法侧重点</span>
+        </div>
+        <div class="min-w-0 overflow-hidden rounded-xl border border-stone-200 bg-white/70"><article class="min-w-0 border-t border-stone-100 px-2.5 py-2 first:border-t-0"><div class="grid min-w-0 grid-cols-[2rem_1fr_auto] items-center gap-2"><div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-black bg-rose-100 text-rose-700">胜</div><div class="min-w-0"><div class="flex min-w-0 items-center gap-1.5"><h4 class="min-w-0 truncate text-sm font-semibold text-stone-950">胜平负/让球</h4><span class="shrink-0 rounded-full bg-stone-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-rose-700">未分配（无比赛）</span></div><p class="mt-0.5 truncate text-[11px] text-rose-600/70">方向判断 · 0 张 · 暂无票据</p></div><div class="shrink-0 text-right"><div class="text-sm font-semibold leading-5 text-stone-950">0.00 元</div><div class="text-[11px] font-medium leading-4 text-rose-700">估 0.00 元</div></div></div></article><article class="min-w-0 border-t border-stone-100 px-2.5 py-2 first:border-t-0"><div class="grid min-w-0 grid-cols-[2rem_1fr_auto] items-center gap-2"><div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-black bg-violet-100 text-violet-700">分</div><div class="min-w-0"><div class="flex min-w-0 items-center gap-1.5"><h4 class="min-w-0 truncate text-sm font-semibold text-stone-950">比分</h4><span class="shrink-0 rounded-full bg-stone-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-violet-700">未分配（无比赛）</span></div><p class="mt-0.5 truncate text-[11px] text-violet-600/70">精确比分 · 0 张 · 暂无票据</p></div><div class="shrink-0 text-right"><div class="text-sm font-semibold leading-5 text-stone-950">0.00 元</div><div class="text-[11px] font-medium leading-4 text-violet-700">估 0.00 元</div></div></div></article><article class="min-w-0 border-t border-stone-100 px-2.5 py-2 first:border-t-0"><div class="grid min-w-0 grid-cols-[2rem_1fr_auto] items-center gap-2"><div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-black bg-amber-100 text-amber-800">半</div><div class="min-w-0"><div class="flex min-w-0 items-center gap-1.5"><h4 class="min-w-0 truncate text-sm font-semibold text-stone-950">半全场</h4><span class="shrink-0 rounded-full bg-stone-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-amber-700">未分配（无比赛）</span></div><p class="mt-0.5 truncate text-[11px] text-amber-700/70">节奏路径 · 0 张 · 暂无票据</p></div><div class="shrink-0 text-right"><div class="text-sm font-semibold leading-5 text-stone-950">0.00 元</div><div class="text-[11px] font-medium leading-4 text-amber-700">估 0.00 元</div></div></div></article><article class="min-w-0 border-t border-stone-100 px-2.5 py-2 first:border-t-0"><div class="grid min-w-0 grid-cols-[2rem_1fr_auto] items-center gap-2"><div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-black bg-sky-100 text-sky-700">球</div><div class="min-w-0"><div class="flex min-w-0 items-center gap-1.5"><h4 class="min-w-0 truncate text-sm font-semibold text-stone-950">总进球数</h4><span class="shrink-0 rounded-full bg-stone-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-sky-700">未分配（无比赛）</span></div><p class="mt-0.5 truncate text-[11px] text-sky-600/70">进球区间 · 0 张 · 暂无票据</p></div><div class="shrink-0 text-right"><div class="text-sm font-semibold leading-5 text-stone-950">0.00 元</div><div class="text-[11px] font-medium leading-4 text-sky-700">估 0.00 元</div></div></div></article><article class="min-w-0 border-t border-stone-100 px-2.5 py-2 first:border-t-0"><div class="grid min-w-0 grid-cols-[2rem_1fr_auto] items-center gap-2"><div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-black bg-teal-100 text-teal-700">混</div><div class="min-w-0"><div class="flex min-w-0 items-center gap-1.5"><h4 class="min-w-0 truncate text-sm font-semibold text-stone-950">混合过关</h4><span class="shrink-0 rounded-full bg-stone-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-teal-700">未分配（无比赛）</span></div><p class="mt-0.5 truncate text-[11px] text-teal-600/70">跨玩法共振 · 0 张 · 暂无票据</p></div><div class="shrink-0 text-right"><div class="text-sm font-semibold leading-5 text-stone-950">0.00 元</div><div class="text-[11px] font-medium leading-4 text-teal-700">估 0.00 元</div></div></div></article></div>
+      </section>
+
+      
+
+      <section id="tickets" class="anchor-target mt-5 min-w-0">
+        <div class="mb-2 flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-stone-950">按模块看票</h3>
+          <span class="text-xs text-stone-500">颜色对应玩法</span>
+        </div>
+        <div class="grid min-w-0 gap-2.5"><section id="module-result" class="anchor-target min-w-0 rounded-xl border p-2.5 border-rose-200 bg-rose-50/70"><div class="mb-2 flex items-center justify-between gap-3"><div class="flex min-w-0 items-center gap-2.5"><div class="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-xs font-black bg-rose-100 text-rose-700">胜</div><div class="min-w-0"><h4 class="truncate text-sm font-semibold text-stone-950">胜平负/让球</h4><p class="mt-0.5 text-[11px] text-rose-600/70">方向判断 · 0 张票</p></div></div><div class="text-right"><div class="text-sm font-semibold text-stone-950">0.00 元</div><div class="text-[11px] text-rose-600/70">估 0.00 元</div></div></div><div class="mb-1.5 flex items-center justify-between gap-2"><h5 class="text-xs font-semibold text-stone-900">票据组合</h5><span class="text-[11px] text-rose-600/70">0 张</span></div><p class="text-sm text-stone-500">暂无票据。</p></section><section id="module-score" class="anchor-target min-w-0 rounded-xl border p-2.5 border-violet-200 bg-violet-50/70"><div class="mb-2 flex items-center justify-between gap-3"><div class="flex min-w-0 items-center gap-2.5"><div class="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-xs font-black bg-violet-100 text-violet-700">分</div><div class="min-w-0"><h4 class="truncate text-sm font-semibold text-stone-950">比分</h4><p class="mt-0.5 text-[11px] text-violet-600/70">精确比分 · 0 张票</p></div></div><div class="text-right"><div class="text-sm font-semibold text-stone-950">0.00 元</div><div class="text-[11px] text-violet-600/70">估 0.00 元</div></div></div><div class="mb-1.5 flex items-center justify-between gap-2"><h5 class="text-xs font-semibold text-stone-900">票据组合</h5><span class="text-[11px] text-violet-600/70">0 张</span></div><p class="text-sm text-stone-500">暂无票据。</p></section><section id="module-half" class="anchor-target min-w-0 rounded-xl border p-2.5 border-amber-200 bg-amber-50/75"><div class="mb-2 flex items-center justify-between gap-3"><div class="flex min-w-0 items-center gap-2.5"><div class="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-xs font-black bg-amber-100 text-amber-800">半</div><div class="min-w-0"><h4 class="truncate text-sm font-semibold text-stone-950">半全场</h4><p class="mt-0.5 text-[11px] text-amber-700/70">节奏路径 · 0 张票</p></div></div><div class="text-right"><div class="text-sm font-semibold text-stone-950">0.00 元</div><div class="text-[11px] text-amber-700/70">估 0.00 元</div></div></div><div class="mb-1.5 flex items-center justify-between gap-2"><h5 class="text-xs font-semibold text-stone-900">票据组合</h5><span class="text-[11px] text-amber-700/70">0 张</span></div><p class="text-sm text-stone-500">暂无票据。</p></section><section id="module-goals" class="anchor-target min-w-0 rounded-xl border p-2.5 border-sky-200 bg-sky-50/70"><div class="mb-2 flex items-center justify-between gap-3"><div class="flex min-w-0 items-center gap-2.5"><div class="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-xs font-black bg-sky-100 text-sky-700">球</div><div class="min-w-0"><h4 class="truncate text-sm font-semibold text-stone-950">总进球数</h4><p class="mt-0.5 text-[11px] text-sky-600/70">进球区间 · 0 张票</p></div></div><div class="text-right"><div class="text-sm font-semibold text-stone-950">0.00 元</div><div class="text-[11px] text-sky-600/70">估 0.00 元</div></div></div><div class="mb-1.5 flex items-center justify-between gap-2"><h5 class="text-xs font-semibold text-stone-900">票据组合</h5><span class="text-[11px] text-sky-600/70">0 张</span></div><p class="text-sm text-stone-500">暂无票据。</p></section><section id="module-mixed" class="anchor-target min-w-0 rounded-xl border p-2.5 border-teal-200 bg-teal-50/70"><div class="mb-2 flex items-center justify-between gap-3"><div class="flex min-w-0 items-center gap-2.5"><div class="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-xs font-black bg-teal-100 text-teal-700">混</div><div class="min-w-0"><h4 class="truncate text-sm font-semibold text-stone-950">混合过关</h4><p class="mt-0.5 text-[11px] text-teal-600/70">跨玩法共振 · 0 张票</p></div></div><div class="text-right"><div class="text-sm font-semibold text-stone-950">0.00 元</div><div class="text-[11px] text-teal-600/70">估 0.00 元</div></div></div><div class="mb-1.5 flex items-center justify-between gap-2"><h5 class="text-xs font-semibold text-stone-900">票据组合</h5><span class="text-[11px] text-teal-600/70">0 张</span></div><p class="text-sm text-stone-500">暂无票据。</p></section></div>
+      </section>
+
+      <section id="matches" class="anchor-target mt-5 min-w-0">
+        <div class="mb-2 flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-stone-950">涉及场次</h3>
+          <span class="text-xs text-stone-500">天气和出线背景</span>
+        </div>
+        <p class="text-sm text-stone-500">暂无比赛记录。</p>
+      </section>
+
+      
+    
+
+      <footer class="mt-5 flex min-w-0 flex-wrap gap-x-3 gap-y-1 border-t border-stone-200 pt-3 text-xs text-stone-500">
+        <span class="break-anywhere font-medium text-stone-700">仅纸面模拟，不用于真实购彩。</span>
+        <a class="break-anywhere font-medium text-stone-700" href="https://trade.500.com/jczq/?playid=312&amp;g=2">500.com</a>
+        <span class="break-anywhere">访问 2026-07-20T05:35:57+08:00</span>
+      </footer>
+    </article>
+    
+    <footer class="py-6 text-center text-xs text-stone-400">最后生成：2026-07-20T05:39:24+08:00 · <a class="underline" href="../index.html">返回首页</a></footer>
+  </div>
+
+  <script>
+    (() => {
+      const links = Array.from(document.querySelectorAll("[data-day-anchor]"));
+      if (!links.length) return;
+
+      const nav = document.querySelector("[data-day-anchor-bar]")?.closest("nav");
+      const anchorBar = document.querySelector("[data-day-anchor-bar]");
+      const sections = links
+        .map((link) => document.getElementById(link.dataset.dayAnchor || ""))
+        .filter(Boolean);
+      let ticking = false;
+
+      const centerLinkInBar = (link) => {
+        if (!anchorBar) return;
+        const linkCenter = link.offsetLeft + link.offsetWidth / 2;
+        const targetLeft = linkCenter - anchorBar.clientWidth / 2;
+        anchorBar.scrollTo({ left: targetLeft, behavior: "smooth" });
+      };
+
+      const setActive = (id, shouldCenter = true) => {
+        for (const link of links) {
+          const wasActive = link.getAttribute("aria-current") === "true";
+          const active = link.dataset.dayAnchor === id;
+          link.classList.toggle("is-active", active);
+          link.setAttribute("aria-current", active ? "true" : "false");
+          if (active && shouldCenter && !wasActive) {
+            centerLinkInBar(link);
+          }
+        }
+      };
+
+      for (const link of links) {
+        link.addEventListener("click", (event) => {
+          const id = link.dataset.dayAnchor;
+          const target = id ? document.getElementById(id) : null;
+          if (!target) return;
+          event.preventDefault();
+          setActive(id);
+          target.scrollIntoView({ block: "start", behavior: "smooth" });
+          history.replaceState(null, "", `#${id}`);
+          window.setTimeout(() => updateActiveFromScroll(), 420);
+        });
+      }
+
+      const activeLine = () => {
+        const navBottom = nav ? nav.getBoundingClientRect().bottom : 0;
+        return Math.max(72, navBottom + 88);
+      };
+
+      const currentSectionId = () => {
+        if (!sections.length) return "";
+        const line = activeLine();
+        let current = sections[0].id;
+        for (const section of sections) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= line) current = section.id;
+          if (rect.top > line) break;
+        }
+        const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+        return nearBottom ? sections[sections.length - 1].id : current;
+      };
+
+      const updateActiveFromScroll = () => {
+        ticking = false;
+        const id = currentSectionId();
+        if (id) setActive(id, true);
+      };
+
+      const requestActiveUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateActiveFromScroll);
+      };
+
+      window.addEventListener("scroll", requestActiveUpdate, { passive: true });
+      window.addEventListener("resize", requestActiveUpdate);
+
+      const initialId = location.hash ? location.hash.slice(1) : links[0].dataset.dayAnchor;
+      if (initialId) setActive(initialId, false);
+      window.requestAnimationFrame(updateActiveFromScroll);
+    })();
+  </script>
+
+</body>
+</html>

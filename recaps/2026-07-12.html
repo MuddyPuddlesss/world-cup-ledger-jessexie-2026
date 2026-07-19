@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-12 复盘</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    .break-anywhere {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .anchor-target {
+      scroll-margin-top: 6.5rem;
+    }
+    .day-anchor {
+      transition: background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
+    }
+    .day-anchor.is-active {
+      border-color: #1c2723 !important;
+      background: #1c2723 !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 18px rgba(28,39,35,.16);
+    }
+    .no-scrollbar {
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    select { color-scheme: light; }
+    .date-chip {
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.075);
+      color: #e7e5e4;
+      white-space: nowrap;
+      transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+    }
+    .date-chip:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.24);
+    }
+    .date-chip span {
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .date-chip .status-mark {
+      color: #a8a29e;
+    }
+    .date-chip.status-profit .status-mark {
+      color: #fca5a5;
+    }
+    .date-chip.status-loss .status-mark {
+      color: #86efac;
+    }
+    .date-chip.status-pending .status-mark {
+      color: #93c5fd;
+    }
+    .date-chip.is-active {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.52), 0 8px 18px rgba(0,0,0,.12);
+    }
+    .date-chip.is-active[data-date-choice="all"] {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-profit {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-loss {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+    .date-chip.is-active.status-pending {
+      border-color: rgba(255,255,255,.88);
+      background: #f8fafc;
+      color: #18231f;
+    }
+  </style>
+</head>
+<body class="bg-[#f7f6f2] text-stone-950">
+  <div class="mx-auto min-h-screen w-full max-w-4xl px-3 py-4 sm:px-5 sm:py-6">
+    <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm sm:p-6">
+      <a class="inline-flex text-sm font-semibold text-stone-500" href="../index.html">← 返回首页</a>
+      <div class="mt-4 border-b border-stone-200 pb-4">
+        <div class="text-xs font-medium uppercase tracking-[0.18em] text-stone-400">Recap</div>
+        <h1 class="mt-2 text-2xl font-semibold tracking-tight text-stone-950">2026-07-12 复盘</h1>
+        <p class="mt-2 text-sm text-stone-500">已整理成网页复盘，方便手机阅读。</p>
+      </div>
+      <section class="mt-4 rounded-2xl border border-stone-200 bg-stone-50/70 p-2.5 sm:p-4"><div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"><div><h2 class="text-lg font-semibold text-stone-950">票面结算</h2><p class="mt-1 text-sm text-stone-500">把票据代号翻译成具体买法、赛果和实收。</p></div><a class="w-fit rounded-lg bg-stone-900 px-3 py-2 text-sm font-semibold text-white" href="../days/2026-07-12.html">查看原方案</a></div><div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-4"><div class="min-w-0 rounded-lg border border-stone-200 bg-white p-2.5 sm:p-3"><div class="text-[11px] font-medium text-stone-500 sm:text-xs">投入</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950 sm:mt-1 sm:text-lg">100.00 元</div></div><div class="min-w-0 rounded-lg border border-amber-200 bg-amber-50 p-2.5 sm:p-3"><div class="text-[11px] font-medium text-stone-500 sm:text-xs">实收</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950 sm:mt-1 sm:text-lg">0.00 元</div></div><div class="min-w-0 rounded-lg border border-stone-200 bg-white p-2.5 sm:p-3"><div class="text-[11px] font-medium text-stone-500 sm:text-xs">净盈亏</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950 sm:mt-1 sm:text-lg">-100.00 元</div></div><div class="min-w-0 rounded-lg border border-stone-200 bg-white p-2.5 sm:p-3"><div class="text-[11px] font-medium text-stone-500 sm:text-xs">命中票</div><div class="mt-0.5 break-anywhere text-sm font-semibold tracking-tight text-stone-950 sm:mt-1 sm:text-lg">0 / 10 张</div></div></div><div class="mt-4"><div class="mb-2 flex items-center justify-between gap-3"><h3 class="text-sm font-semibold text-stone-950">命中与实收</h3><span class="text-xs text-stone-500">直接看中了哪张、哪几场</span></div><div class="grid gap-2"><p class="rounded-xl border border-stone-200 bg-white p-3 text-sm text-stone-500">本期没有命中票。</p></div></div><div class="mt-4"><div class="mb-2 flex items-center justify-between gap-3"><h3 class="text-sm font-semibold text-stone-950">未中差在哪</h3><span class="text-xs text-stone-500">只列关键偏差</span></div><div class="grid gap-2 md:grid-cols-2"><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-rose-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-rose-700">胜平负/让球 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰胜 + 🇦🇷 阿根廷胜</h4><div class="mt-0.5 text-[11px] text-stone-500">T-RQSPF-WEN</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 客胜，实际 平局</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 主胜，实际 平局</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-rose-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-rose-700">胜平负/让球 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威(+1)让平 + 🇦🇷 阿根廷(-1)让平</h4><div class="mt-0.5 text-[11px] text-stone-500">T-RQSPF-BO</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 让平 +1，实际 让胜 +1</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 让平 -1，实际 让负 -1</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-violet-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-violet-700">比分 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 1:2 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 1:0</h4><div class="mt-0.5 text-[11px] text-stone-500">T-BF-WEN</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 1:2，实际 1:1</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 1:0，实际 1:1</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-violet-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-violet-700">比分 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 2:2 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 1:1</h4><div class="mt-0.5 text-[11px] text-stone-500">T-BF-BO</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 2:2，实际 1:1</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-amber-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-amber-700">半全场 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 平负 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 平胜</h4><div class="mt-0.5 text-[11px] text-stone-500">T-BQC-WEN</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 平负，实际 平平</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 平胜，实际 胜平</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-amber-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-amber-700">半全场 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 平平 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 平平</h4><div class="mt-0.5 text-[11px] text-stone-500">T-BQC-BO</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 平平，实际 胜平</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-sky-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-sky-700">总进球数 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 3球 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 1球</h4><div class="mt-0.5 text-[11px] text-stone-500">T-JQS-WEN</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 3球，实际 2球</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 1球，实际 2球</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-sky-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-sky-700">总进球数 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 4球 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 2球</h4><div class="mt-0.5 text-[11px] text-stone-500">T-JQS-BO</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 4球，实际 2球</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-teal-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-teal-700">混合过关 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 3球 + 🇦🇷 阿根廷胜</h4><div class="mt-0.5 text-[11px] text-stone-500">T-MIX-WEN</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 3球，实际 2球</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 主胜，实际 平局</li></ul></div></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-2.5 shadow-sm border-l-teal-400"><div class="grid min-w-0 grid-cols-[1fr_auto] gap-2"><div class="min-w-0"><div class="text-xs font-semibold text-teal-700">混合过关 · 2×1</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威(+1)让平 + 🇦🇷 阿根廷 vs 🇨🇭 瑞士 平胜</h4><div class="mt-0.5 text-[11px] text-stone-500">T-MIX-BO</div></div><div class="shrink-0 text-right"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">未中</span><div class="mt-1 text-sm font-semibold leading-5 text-stone-950">10.00 元</div><div class="text-[11px] leading-4 text-stone-500">投入</div></div></div><div class="mt-1 flex items-center justify-between gap-2 text-[11px] text-stone-500"><span>1 组未中</span><span>实收 0.00 元</span></div><div class="mt-1 rounded-lg bg-stone-50 px-2.5 py-1.5"><div class="text-xs font-semibold text-stone-600">关键偏差</div><ul class="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600"><li class="break-anywhere">🇳🇴 挪威 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰：买 让平 +1，实际 让胜 +1</li><li class="break-anywhere">🇦🇷 阿根廷 vs 🇨🇭 瑞士：买 平胜，实际 胜平</li></ul></div></article></div></div></section>
+      <div class="prose-lite mt-5">
+        <h2 class="mt-0 text-lg font-semibold text-stone-950">复盘笔记</h2>
+        <h1 class="mt-0 text-2xl font-semibold tracking-tight text-stone-950">2026-07-12 世界杯八强窗口正式复盘</h1>
+<blockquote class="my-4 rounded-xl border-l-4 border-stone-300 bg-stone-50 px-4 py-3 text-sm text-stone-600">仅纸面模拟，不用于真实购彩；以下只用于复盘和模型校准。</blockquote>
+<p class="my-3 text-sm leading-6 text-stone-700"><strong>结算口径</strong>：中国体育彩票竞彩足球按 90 分钟含伤停补时结算，不含加时赛和点球大战。🇳🇴 挪威—🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰虽然由🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰在加时赛取胜，但竞彩全场赛果按 90 分钟 1:1 处理。</p>
+<p class="my-3 text-sm leading-6 text-stone-700"><strong>赛果来源</strong>：AP 确认🇳🇴 挪威 36 分钟进球、🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰上半场补时扳平，90 分钟 1:1 后进入加时；AP 确认🇦🇷 阿根廷半场 1:0 🇨🇭 瑞士，90 分钟被追成 1:1 后进入加时。访问时间：2026-07-12T11:22+08:00。</p>
+<div class="my-4 grid gap-2 sm:hidden"><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-3"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="text-[11px] font-semibold text-stone-400">复盘项</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">总账</h4></div><div class="shrink-0 max-w-[46%] break-anywhere rounded-full bg-stone-50 px-2 py-1 text-right text-xs font-semibold leading-5 text-stone-700">7月12日投入100.00元，回报0.00元，净盈亏-100.00元</div></div><dl class="mt-2 grid min-w-0"><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">暴露问题</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">10张2×1票全部失手</dd></div><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">今天如何调整</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">下一期单场降级，避免串关放大误差</dd></div></dl></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-3"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="text-[11px] font-semibold text-stone-400">复盘项</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇳🇴 挪威-🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰</h4></div><div class="shrink-0 max-w-[46%] break-anywhere rounded-full bg-stone-50 px-2 py-1 text-right text-xs font-semibold leading-5 text-stone-700">90分钟1:1，半场1:1；🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰加时2:1晋级</div></div><dl class="mt-2 grid min-w-0"><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">暴露问题</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">1:1只展示，未进入比分票</dd></div><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">今天如何调整</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">高概率保护比分要有一张独立票</dd></div></dl></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-3"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="text-[11px] font-semibold text-stone-400">复盘项</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">🇦🇷 阿根廷-🇨🇭 瑞士</h4></div><div class="shrink-0 max-w-[46%] break-anywhere rounded-full bg-stone-50 px-2 py-1 text-right text-xs font-semibold leading-5 text-stone-700">90分钟1:1，半场🇦🇷 阿根廷1:0</div></div><dl class="mt-2 grid min-w-0"><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">暴露问题</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">全场防平正确，半场路径错误</dd></div><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">今天如何调整</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">半全场不再机械套用半场平</dd></div></dl></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-3"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="text-[11px] font-semibold text-stone-400">复盘项</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">总进球数</h4></div><div class="shrink-0 max-w-[46%] break-anywhere rounded-full bg-stone-50 px-2 py-1 text-right text-xs font-semibold leading-5 text-stone-700">两场90分钟均为2球</div></div><dl class="mt-2 grid min-w-0"><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">暴露问题</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">挪英3/4球判断过高</dd></div><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">今天如何调整</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">强强淘汰赛回到2/3球分层</dd></div></dl></article><article class="min-w-0 rounded-xl border border-stone-200 bg-white p-3"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="text-[11px] font-semibold text-stone-400">复盘项</div><h4 class="mt-0.5 break-anywhere text-sm font-semibold leading-5 text-stone-950">混合过关</h4></div><div class="shrink-0 max-w-[46%] break-anywhere rounded-full bg-stone-50 px-2 py-1 text-right text-xs font-semibold leading-5 text-stone-700">两张票均有一腿失手</div></div><dl class="mt-2 grid min-w-0"><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">暴露问题</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">跨场相关性不足</dd></div><div class="grid min-w-0 grid-cols-[4.25rem_1fr] gap-2 border-t border-stone-100 py-1.5 first:border-t-0 first:pt-0 last:pb-0"><dt class="text-[11px] font-semibold text-stone-400">今天如何调整</dt><dd class="min-w-0 break-anywhere text-xs leading-5 text-stone-700">单场窗口只保留可解释候选并注明降级</dd></div></dl></article></div><div class="my-4 hidden overflow-x-auto rounded-xl border border-stone-200 bg-white sm:block"><table class="min-w-full text-sm text-stone-700"><thead class="bg-stone-50 text-stone-950"><tr><th class="whitespace-nowrap px-3 py-2 text-left font-semibold">复盘项</th><th class="whitespace-nowrap px-3 py-2 text-left font-semibold">实际情况</th><th class="whitespace-nowrap px-3 py-2 text-left font-semibold">暴露问题</th><th class="whitespace-nowrap px-3 py-2 text-left font-semibold">今天如何调整</th></tr></thead><tbody><tr><td class="border-t border-stone-200 px-3 py-2 align-top">总账</td><td class="border-t border-stone-200 px-3 py-2 align-top">7月12日投入100.00元，回报0.00元，净盈亏-100.00元</td><td class="border-t border-stone-200 px-3 py-2 align-top">10张2×1票全部失手</td><td class="border-t border-stone-200 px-3 py-2 align-top">下一期单场降级，避免串关放大误差</td></tr><tr><td class="border-t border-stone-200 px-3 py-2 align-top">🇳🇴 挪威-🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰</td><td class="border-t border-stone-200 px-3 py-2 align-top">90分钟1:1，半场1:1；🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰加时2:1晋级</td><td class="border-t border-stone-200 px-3 py-2 align-top">1:1只展示，未进入比分票</td><td class="border-t border-stone-200 px-3 py-2 align-top">高概率保护比分要有一张独立票</td></tr><tr><td class="border-t border-stone-200 px-3 py-2 align-top">🇦🇷 阿根廷-🇨🇭 瑞士</td><td class="border-t border-stone-200 px-3 py-2 align-top">90分钟1:1，半场🇦🇷 阿根廷1:0</td><td class="border-t border-stone-200 px-3 py-2 align-top">全场防平正确，半场路径错误</td><td class="border-t border-stone-200 px-3 py-2 align-top">半全场不再机械套用半场平</td></tr><tr><td class="border-t border-stone-200 px-3 py-2 align-top">总进球数</td><td class="border-t border-stone-200 px-3 py-2 align-top">两场90分钟均为2球</td><td class="border-t border-stone-200 px-3 py-2 align-top">挪英3/4球判断过高</td><td class="border-t border-stone-200 px-3 py-2 align-top">强强淘汰赛回到2/3球分层</td></tr><tr><td class="border-t border-stone-200 px-3 py-2 align-top">混合过关</td><td class="border-t border-stone-200 px-3 py-2 align-top">两张票均有一腿失手</td><td class="border-t border-stone-200 px-3 py-2 align-top">跨场相关性不足</td><td class="border-t border-stone-200 px-3 py-2 align-top">单场窗口只保留可解释候选并注明降级</td></tr></tbody></table></div>
+<h2 class="mt-7 text-lg font-semibold text-stone-950">命中明细</h2>
+<ul class="my-3 grid gap-2 pl-5 text-sm text-stone-700">
+<li class="list-disc">本期没有完整命中的票据，纸面实际回报为 0.00 元。</li>
+<li class="list-disc">🇦🇷 阿根廷—🇨🇭 瑞士 <code class="rounded bg-stone-100 px-1 py-0.5 text-[0.92em]">1:1</code> 比分腿单独判断正确，但它位于 <code class="rounded bg-stone-100 px-1 py-0.5 text-[0.92em]">T-BF-BO</code> 的 2×1 中；🇳🇴 挪威—🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰选择的是 <code class="rounded bg-stone-100 px-1 py-0.5 text-[0.92em]">2:2</code>，因此整票未命中，不能拆算回报。</li>
+<li class="list-disc"><code class="rounded bg-stone-100 px-1 py-0.5 text-[0.92em]">T-BQC-BO</code> 的🇳🇴 挪威—🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰“平平”命中，但🇦🇷 阿根廷—🇨🇭 瑞士半场为主胜、全场为平，实际路径是“胜平”，整票仍未命中。</li>
+</ul>
+<h2 class="mt-7 text-lg font-semibold text-stone-950">未命中原因</h2>
+<ul class="my-3 grid gap-2 pl-5 text-sm text-stone-700">
+<li class="list-disc">两场 90 分钟都打平，但方向稳票押了🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰胜与🇦🇷 阿根廷胜；加时赛结果不能补入竞彩胜平负结算。</li>
+<li class="list-disc">🇳🇴 挪威—🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰最终落在 1:1，而 1:1 只在预测矩阵展示，没有进入比分票。</li>
+<li class="list-disc">湿热环境没有把挪英常规时间推到 3/4 球，模型高估了持续进球交换。</li>
+<li class="list-disc">🇦🇷 阿根廷早早领先后未守住，说明淘汰赛强队“半场领先—全场被追平”路径需要保留。</li>
+</ul>
+<h2 class="mt-7 text-lg font-semibold text-stone-950">今天采用的调整规则</h2>
+<p class="my-3 text-sm leading-6 text-stone-700">1. 淘汰赛只按 90 分钟含伤停补时判断，不能用加时晋级结果替代竞彩胜平负。</p>
+<p class="my-3 text-sm leading-6 text-stone-700">2. 三个比分候选中，概率最高的保护平局若不入票必须有更强覆盖理由；🇫🇷 法国—西班牙直接把 1:1 入票。</p>
+<p class="my-3 text-sm leading-6 text-stone-700">3. 单场窗口五模块均降级为独立单关纸面记录，不伪造跨场 2×1。</p>
+<p class="my-3 text-sm leading-6 text-stone-700">4. 强强淘汰赛总进球回到 2/3 球，不因单一攻击线或天气因素追高。</p>
+<p class="my-3 text-sm leading-6 text-stone-700">5. 半全场同时保留“平平”和“平胜”，避免机械套用所有强队场都半场平后获胜。</p>
+      </div>
+    </article>
+    <footer class="py-6 text-center text-xs text-stone-400">最后生成：2026-07-20T05:39:24+08:00 · <a class="underline" href="../index.html">返回首页</a></footer>
+  </div>
+</body>
+</html>
